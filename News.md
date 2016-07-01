@@ -1,11 +1,16 @@
 News
 ================
 
+Cite 0.1.9003
+-------------
+
 Cite 0.1.9002
 -------------
 
 -   Choices as author and date
 -   Content preview
+-   NEWS
+-   README
 
 Cite 0.1.9001
 -------------

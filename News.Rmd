@@ -7,6 +7,10 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Cite 0.1.9003
+- Correct namespace
+- Fix link to News
+
 ## Cite 0.1.9002
 - Choices as author and date
 - Content preview

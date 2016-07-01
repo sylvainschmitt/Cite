@@ -3,7 +3,7 @@ Cite
 
 **Cite** is a RStudio-Addin that uses the `rstudioapi` package and provides a GUI to insert bibliography entries in Rmarkdown document with a BibTex file.
 
-For a full list of features see [`NEWS`](./NEWS.md).
+For a full list of features see [`NEWS`](./News.md).
 
 Installation
 ------------

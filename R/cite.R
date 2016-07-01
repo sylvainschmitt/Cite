@@ -1,7 +1,7 @@
-#' @importFrom RefManageR ReadBib
+#' @importFrom RefManageR ReadBib TextCite
 #' @importFrom rstudioapi getActiveDocumentContext insertText
 #' @importFrom miniUI miniPage gadgetTitleBar miniContentPanel
-#' @importFrom shiny selectInput checkboxInput observeEvent stopApp paneViewer runGadget reactiveValues
+#' @importFrom shiny selectizeInput checkboxInput textOutput renderText observeEvent stopApp paneViewer runGadget reactiveValues
 NULL
 
 
