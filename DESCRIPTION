@@ -1,0 +1,15 @@
+Package: Cite
+Type: Package
+Title: Addin to insert BibTex citation in Rmd documents
+Version: 0.1.9001
+Author: Sylvain Schmitt
+Maintainer: Sylvain Schmitt <sylvain.schmitt@agroparistech.fr>
+Description: More about what it does (maybe more than one line)
+License: GPL 3
+LazyData: TRUE
+Imports:
+    shiny (>= 0.13),
+    miniUI (>= 0.1.1),
+    rstudioapi (>= 0.5),
+    RefManageR
+RoxygenNote: 5.0.1

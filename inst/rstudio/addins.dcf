@@ -1,0 +1,4 @@
+Name: Cite
+Description: Helps insert bibtex citation in Rmd documents
+Binding: cite
+Interactive: true
