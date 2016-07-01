@@ -1,16 +1,27 @@
 #' @importFrom RefManageR ReadBib
 #' @importFrom rstudioapi getActiveDocumentContext insertText
 #' @importFrom miniUI miniPage gadgetTitleBar miniContentPanel
-#' @importFrom shiny selectInput checkboxInput observeEvent stopApp paneViewer runGadget
+#' @importFrom shiny selectInput checkboxInput observeEvent stopApp paneViewer runGadget reactiveValues
 NULL
 
+
+#' Cite
+#'
+#' Addin to insert BibTex citation in Rmd documents
+#'
+#' @return citaion entry
 #' @export
+#'
+#' @examples
+#' # To run the addin place your cursor
+#' # in a Rmd document with a defined
+#' # bibliography file
 #'
 cite <- function(){
 
   # Bibliography
   c <-  getActiveDocumentContext()
-  if(!is.integer(grep('bibliography', c$contents))){
+  if(length(grep('bibliography', c$contents)) < 1){
     stop('No bibliography in the document !')
   }
   bib <- c$contents[grep('bibliography', c$contents)]
@@ -19,25 +30,47 @@ cite <- function(){
   path <- c(path[-length(path)], bib)
   path <- paste0(path, collapse = '/')
   bib <- ReadBib(path)
+  bib.l <- names(bib)
+  names(bib.l) <- unlist(lapply(bib, TextCite))
+  bib.l <- bib.l[order(bib.l)]
 
   # UI
   ui <- miniPage(
     gadgetTitleBar("Cite"),
     miniContentPanel(
-      selectInput("citation", "Citation:", names(bib)[order(names(bib))]),
-      checkboxInput("brackets", "Brackets", T)
+      selectizeInput("citation", "Citation:", bib.l),
+      checkboxInput("brackets", "Brackets", T),
+      textOutput("preview")
     )
   )
 
   # Server
   server <- function(input, output, session) {
 
+    citation <- reactiveValues(ref = NULL,
+                               code = NULL,
+                               entry = NULL,
+                               title = NULL,
+                               Journal = NULL)
+
+    observeEvent(input$citation,{
+      citation$code <- input$citation
+      citation$ref <- names(which(bib.l == citation$code))
+      citation$entry <- bib[which(names(bib) == citation$code)]
+      citation$title <- citation$entry$title
+      citation$journal <- citation$entry$journal
+      output$preview <- renderText(paste(citation$ref,
+                                         citation$title,
+                                         citation$journal,
+                                         sep = ' ; '))
+    })
+
     observeEvent(input$done, {
-      citation <- paste0('@', input$citation)
+      text <- paste0('@', citation$code)
       if(input$brackets){
-        citation <- paste0('[', citation, ']')
+        text <- paste0('[', text, ']')
       }
-      insertText(text = citation)
+      insertText(text = text)
       stopApp()
     })
 
