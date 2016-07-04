@@ -4,6 +4,15 @@ News
 Cite 0.1.9003
 -------------
 
+-   Check
+-   Travis
+
+Cite 0.1.9003
+-------------
+
+-   Correct namespace
+-   Fix link to News
+
 Cite 0.1.9002
 -------------
 

@@ -1,9 +1,11 @@
 Cite
 ================
 
+[![Travis-CI Build Status](https://travis-ci.org/sylvainschmitt/Cite.svg?branch=master)](https://travis-ci.org/sylvainschmitt/Cite)
+
 **Cite** is a RStudio-Addin that uses the `rstudioapi` package and provides a GUI to insert bibliography entries in Rmarkdown document with a BibTex file.
 
-For a full list of features see [`NEWS`](./News.md).
+For a full list of features see [`NEWS`](./NEWS.md).
 
 Installation
 ------------
