@@ -31,7 +31,7 @@ cite <- function(){
   path <- paste0(path, collapse = '/')
   bib <- ReadBib(path)
   bib.l <- names(bib)
-  names(bib.l) <- unlist(lapply(bib, TextCite))
+  names(bib.l) <- unlist(lapply(bib, function(x){TextCite(x, .opts = list(cite.style = 'authortitle', max.names = 2))}))
   bib.l <- bib.l[order(bib.l)]
 
   # UI
@@ -55,8 +55,8 @@ cite <- function(){
 
     observeEvent(input$citation,{
       citation$code <- input$citation
-      citation$ref <- names(which(bib.l == citation$code))
       citation$entry <- bib[which(names(bib) == citation$code)]
+      citation$ref <- TextCite(citation$entry)
       citation$title <- citation$entry$title
       citation$journal <- citation$entry$journal
       output$preview <- renderText(paste(citation$ref,

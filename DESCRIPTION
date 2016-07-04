@@ -1,10 +1,10 @@
 Package: Cite
 Type: Package
-Title: An Rstudio addin to insert BibTex citation in Rmarkdown documents
+Title: An RStudio addin to insert BibTex citation in Rmarkdown documents
 Version: 0.1.9004
 Author: Sylvain Schmitt
 Maintainer: Sylvain Schmitt <sylvain.schmitt@agroparistech.fr>
-Description: Contain an Rstudio addin to insert BibTex citation in Rmarkdown documents with a minimal user interface.
+Description: Contain an RStudio addin to insert BibTex citation in Rmarkdown documents with a minimal user interface.
 License: GPL-3
 LazyData: TRUE
 Imports:
