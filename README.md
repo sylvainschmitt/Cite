@@ -1,7 +1,7 @@
 Cite
 ================
 
-[![Travis-CI Build Status](https://travis-ci.org/sylvainschmitt/Cite.svg?branch=master)](https://travis-ci.org/sylvainschmitt/Cite)
+[![Travis-CI Build Status](https://travis-ci.org/sylvainschmitt/Cite.svg?branch=master)](https://travis-ci.org/sylvainschmitt/Cite) [![CRAN](http://www.r-pkg.org/badges/version/Cite)](http://cran.rstudio.com/package=Cite) [![Downloads](http://cranlogs.r-pkg.org/badges/Cite?color=brightgreen)](http://www.r-pkg.org/pkg/Cite)
 
 **Cite** is a RStudio-Addin that uses the `rstudioapi` package and provides a GUI to insert bibliography entries in Rmarkdown document with a BibTex file.
 
@@ -27,3 +27,8 @@ Usage
 -----
 
 After installing, **Cite** is available in the Addins menu within RStudio.
+
+<center>
+[**Click to enlarge**](https://raw.githubusercontent.com/sylvainschmitt/Cite/master/examples/cite.gif)
+<center>
+![Screenshot](examples/cite.gif)
